@@ -5,11 +5,13 @@ import { Box, Button, Heading, Stack, Typography, VStack } from 'native-piece'
 
 // UITLS
 import { PokemonData } from '@/types'
-import typePokemon from '@/constants/type_pokemon'
-import { usePokemon } from '@/context'
+import { usePokemon } from '../../context'
+import typePokemon from '../../constants/type_pokemon'
 
 export default function Card({ item }: { item: PokemonData }) {
   const { onSelectPokemon } = usePokemon()
+
+  if (item.name === undefined) return null
   const types = item.types.slice(0, 2).map(item => item.type.name).join().replace(',', ' / ')
   const moves = item.moves.slice(0, 2).map(item => item.move.name)
 

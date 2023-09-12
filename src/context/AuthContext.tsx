@@ -10,9 +10,9 @@ import React, {
 import { usePathname, useRouter } from 'next/navigation'
 
 import { UserData } from '@/types'
-import { LOCK, ROUTER } from '@/constants'
-import loginMocks from '@/mocks/login.json'
-import { Loading } from '@/components/Loading'
+import { LOCK, ROUTER } from '../constants'
+import loginMocks from '../mocks/login.json'
+import { Loading } from '../components/Loading'
 
 type State = {
   user: UserData

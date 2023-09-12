@@ -1,4 +1,4 @@
-export * from './router'
+export { ROUTER } from './router'
 
 export const LOCK = '__LOCK'
 export const AUTHOR_URI = 'https://yoydev.com/'

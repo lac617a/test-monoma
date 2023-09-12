@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react'
 import { Box, Button, Stack, Typography } from 'native-piece'
 
-import { usePokemon } from '@/context'
+import { usePokemon } from '../../context'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
 
 export default function Pagination() {
@@ -20,6 +20,7 @@ export default function Pagination() {
     }
   }, [pages, total, onPages])
 
+  const totalRenderer = `${pages + 1} de ${total}`
   return (
     <Box>
       <Stack
@@ -37,13 +38,17 @@ export default function Pagination() {
           }
         }}
       >
-        <Button className='tst-round' onClick={lastPage}>
+        <Button className='tst-round' data-prev onClick={lastPage}>
           <FaArrowLeft color='var(--color-white)' />
         </Button>
-        <Typography color='var(--color-white)'>
-          {pages + 1} de {total}
+        <Typography
+          color='var(--color-white)'
+          data-current={pages + 1}
+          data-total={totalRenderer}
+        >
+          {totalRenderer}
         </Typography>
-        <Button className='tst-round' onClick={nextPage}>
+        <Button className='tst-round' data-next onClick={nextPage}>
           <FaArrowRight color='var(--color-white)' />
         </Button>
       </Stack>

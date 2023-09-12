@@ -51,6 +51,11 @@ export type PokemonData = ICommonDataPokemon & {
       version_group: CommonType
     }[]
   }[]
+  stats: {
+    effort: number
+    base_stat: number
+    stat: CommonType
+  }[],
   abilities: {
     slot: number
     is_hidden: boolean

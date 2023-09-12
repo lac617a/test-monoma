@@ -2,7 +2,8 @@ import React from 'react'
 import Image from 'next/image'
 import { Box, Button, Heading, Stack, Typography, VStack } from 'native-piece'
 
-import { usePokemon } from '@/context'
+import StatComponent from './Stat'
+import { usePokemon } from '../../context'
 import { IoClose } from 'react-icons/io5'
 
 const ModalPokemonPreview = () => {
@@ -10,7 +11,6 @@ const ModalPokemonPreview = () => {
 
   if (!selectPokemon) return null
   const types = selectPokemon?.types.map(item => item.type.name).join().replace(',', ' / ')
-  const moves = selectPokemon?.moves.slice(0, 2).map(item => item.move.name).join().replace(',', ' / ')
 
   const handleOnClose = () => onSelectPokemon(undefined)
   return (
@@ -64,11 +64,15 @@ const ModalPokemonPreview = () => {
               alt={selectPokemon?.name}
               src={selectPokemon?.sprites.front_default || selectPokemon?.sprites.front_shiny}
             />
+            <VStack as='ul' className='tst-round' position='absolute' top={0} padding={10} borderTopRightRadius={0} borderBottomLeftRadius={0} left={0}>
+              {selectPokemon.stats.map(item => (
+                <StatComponent key={item.stat.name} item={item} />
+              ))}
+            </VStack>
             <Stack as='figcaption' className='tst-card-figcation'>
               <VStack as='ul' selectors={{ ':is(h3, p)': { color: 'var(--color-third)' } }}>
                 <Heading as='h3'>{selectPokemon?.name}</Heading>
                 <Typography fontWeight={700}>Tipo: {types}</Typography>
-                <Typography fontWeight={700}>Movimiento: {moves}</Typography>
               </VStack>
               <Box backgroundColor='var(--color-primary)' borderRadius={10} padding='6px 16px' height='min-content'>
                 <Typography fontSize={12} color='var(--color-white)'>Peso: {selectPokemon?.weight.toFixed(1)}</Typography>

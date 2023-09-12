@@ -9,11 +9,11 @@ import React, {
   PropsWithChildren
 } from 'react'
 
-import utils from '@/utils'
+import utils from '../utils'
 import { useAuthContext } from '.'
-import { AMOUNTPOKEMON, LOCK } from '@/constants'
+import { AMOUNTPOKEMON, LOCK } from '../constants'
 import { PokemonData, PokemonPaginationType } from '@/types'
-import { getPokemon, getPokemonPagination } from '@/services/pokemon.service'
+import { getPokemon, getPokemonPagination } from '../services/pokemon.service'
 
 type State = {
   pages: number

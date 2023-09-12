@@ -1,6 +1,7 @@
 import React, { FC, useState, InputHTMLAttributes, useMemo } from 'react'
 import { Button, Stack, Typography, VStack } from 'native-piece'
-import utils from '@/utils'
+
+import utils from '../../utils'
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
