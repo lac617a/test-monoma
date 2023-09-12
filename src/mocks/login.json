@@ -3,18 +3,21 @@
     "username": "Test-12",
     "email": "me@gmail.com",
     "password": "1234567er",
+    "avatar": "https://i.pravatar.cc/400?img=65",
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2Vybm1hZSI6IlRlc3QtMTIiLCJlbWFpbCI6Im1lQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNDU2N2VyIn0.nJ5o-fQ48y5vuPmxiNQ0cpSVJGBUyn6g15RHn45-_qA"
   },
   {
     "username": "Yoydev",
-    "email": "yoydev@gmail.com",
     "password": "123456789",
+    "email": "yoydev@gmail.com",
+    "avatar": "https://i.ibb.co/KxzRwND/Ash-Viajes-Pok-mon-2-profile.png",
     "token": "eeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2Vybm1hZSI6IllveWRldiIsImVtYWlsIjoieW95ZGV2QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNDU2Nzg5In0.5MJq34qRLfQ6H0L08T9Sth_flpdRg5mZzslvtuqDpsI"
   },
   {
     "username": "Monoma",
-    "email": "monoma@gmail.com",
     "password": "12345678",
+    "email": "monoma@gmail.com",
+    "avatar": "https://i.pravatar.cc/400?img=47",
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2Vybm1hZSI6Ik1vbm9tYSIsImVtYWlsIjoibW9ub21hQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNDU2NzgifQ.CtOOBa8mobT7KgKng4HTvy4qcGcStFYiwg0eTdEO3bc"
   }
 ]
