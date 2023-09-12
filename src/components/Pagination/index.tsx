@@ -22,27 +22,29 @@ export default function Pagination() {
 
   return (
     <Box>
-      <Stack gap={12} alignItems='center'>
-        <Button
-          display='flex'
-          borderRadius={50}
-          className='tst-round'
-          alignSelf='flex-start'
-          onClick={lastPage}
-        >
-          <FaArrowLeft />
+      <Stack
+        gap={12}
+        alignItems='center'
+        selectors={{
+          '> button': {
+            display: 'flex',
+            borderRadius: 50,
+            transition: '300ms',
+            '&:hover': {
+              transform: 'scale(1.04)',
+              backgroundColor: 'var(--color-primary)'
+            }
+          }
+        }}
+      >
+        <Button className='tst-round' onClick={lastPage}>
+          <FaArrowLeft color='var(--color-white)' />
         </Button>
         <Typography color='var(--color-white)'>
           {pages + 1} de {total}
         </Typography>
-        <Button
-          display='flex'
-          borderRadius={50}
-          className='tst-round'
-          alignSelf='flex-start'
-          onClick={nextPage}
-        >
-          <FaArrowRight />
+        <Button className='tst-round' onClick={nextPage}>
+          <FaArrowRight color='var(--color-white)' />
         </Button>
       </Stack>
     </Box>
