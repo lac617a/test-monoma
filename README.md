@@ -42,6 +42,11 @@ Los cuales se encuentran en esta pagina: [palettes][]
 
 La logica de autenticacion se podria mejorar mucho mas si se implementa los middleware de `Nextjs` ya que con estos nos asegurarmos de que rediriga mucho antes de que carge el sitio web gracias a el `SSR`, tambien quiero aclara que quiero expandir mis conocimientos en pruebas unitarias ya que lo poco que se lo he aplicado con [Vitest][] y [Cypress][] es muy nuevo para mi, pero estoy disponible aprender ya que esos tipos de pruebas `e2e` nos agiliza mucho el trabajo y que se cumplas las condiciones. Tener en cuenta que para poder usar `Cypress` tienes que configurar el archivo `tsconfig.json` con esta propiedad `"moduleResolution": "Node"`
 
+Las variables de entornos son las siguientes
+
+* `PORT=8012`
+* `NEXT_PUBLIC_API=https://pokeapi.co/api/v2/pokemon`
+
 #### Esto fue lo que alcance hacer en dos dias, muchas Gracias por su tiempo att: Dominyel Rivera
 
 [cypress]: https://www.cypress.io/
