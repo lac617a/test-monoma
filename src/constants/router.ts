@@ -1,8 +1,6 @@
 /* eslint-disable no-unused-vars */
 export enum ROUTER {
   MAIN = '/',
-  HOME = '/home',
+  PROFILE = '/profile',
   LOGIN = '/auth/login',
-  FORGOT = '/auth/forgot',
-  SIGNUP = '/auth/signup'
 }
