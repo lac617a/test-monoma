@@ -8,9 +8,13 @@ const Network = () => {
   return (
     <Stack
       gap={8}
+      as='ul'
       alignItems='center'
       justifyContent='center'
+      flexWrap='wrap'
+      // mediaMd={{flexWrap: 'wrap-reverse'}}
       selectors={{
+        '> button': { flex: '1 1 100px' },
         '> button > div > svg': { fill: 'white' },
         '> button > div > p': { color: 'white', fontWeight: 600 }
       }}
