@@ -21,6 +21,7 @@ export type PokemonPaginationType = {
 export type UserData = {
   email: string
   token: string
+  avatar: string
   username: string
 }
 

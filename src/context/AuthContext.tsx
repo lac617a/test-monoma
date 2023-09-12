@@ -20,7 +20,7 @@ type State = {
 }
 
 type Actions = {
-  setterUser: (user: UserData) => void
+  setterUser: (user?: UserData) => void
   setterLoading: (status: boolean) => void
 }
 
@@ -32,33 +32,36 @@ export const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
   const [user, setUser] = useState<UserData>({
     token: '',
     email: '',
-    username: ''
+    username: '',
+    avatar: ''
   })
   const [loading, setLoading] = useState<boolean>(true)
   const router = useRouter()
   const pathname = usePathname()
 
   const setterLoading = (status: boolean) => setLoading(status)
-  const setterUser = (users: UserData) => {
-    sessionStorage.setItem(LOCK, users.token)
-    setUser(users)
+  const setterUser = (users?: UserData) => {
+    sessionStorage.setItem(LOCK, users?.token as string)
+    setUser(users as UserData)
   }
 
   useEffect(() => {
     const token = sessionStorage.getItem(LOCK)
-    if (token) {
+    if (token && user.username === '') {
       const exitingUser = loginMocks.find(item => item.token === token)
       if (exitingUser) {
-        setLoading(false)
         setUser(exitingUser)
         router.push(ROUTER.MAIN)
-      } else {
         setLoading(false)
+      } else {
         router.replace(ROUTER.LOGIN)
+        setLoading(false)
       }
     } else {
+      if (user.username === '') {
+        router.replace(ROUTER.LOGIN)
+      }
       setLoading(false)
-      router.replace(ROUTER.LOGIN)
     }
     return () => setLoading(true)
     // eslint-disable-next-line react-hooks/exhaustive-deps
