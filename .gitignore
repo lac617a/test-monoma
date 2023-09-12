@@ -34,3 +34,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# cypress
+cypress/screenshots
+cypress/videos
+
+# coverage
+.nyc_output
+coverage
+cypress-coverage
+jest-coverage

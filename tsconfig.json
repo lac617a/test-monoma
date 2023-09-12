@@ -1,14 +1,18 @@
 {
   "compilerOptions": {
     "target": "es6",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "bundler",
+    "moduleResolution": "Bundler", // CYPRESS "Node"
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
@@ -19,7 +23,9 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ]
     }
   },
   "include": [
@@ -28,6 +34,13 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "env.d.ts"
-, "src/layouts/Header/index.tss"  ],
-  "exclude": ["node_modules"]
+  ],
+  "exclude": [
+    "node_modules",
+    "cypress-coverage",
+    ".next",
+    "coverage",
+    "jest-coverage",
+    "**/*.cy.{ts, tsx}"
+  ]
 }

@@ -11,7 +11,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "cypress": "cypress",
+    "e2e": "start-server-and-test dev http://localhost:3000 \"cypress open --e2e\"",
+    "e2e:headless": "start-server-and-test dev http://localhost:3000 \"cypress run --e2e\"",
+    "component": "cypress open --component",
+    "component:headless": "cypress run --component"
   },
   "dependencies": {
     "@types/node": "20.6.0",
@@ -28,7 +33,9 @@
     "typescript": "5.2.2"
   },
   "devDependencies": {
-    "standard": "^17.1.0"
+    "cypress": "12.3.0",
+    "standard": "^17.1.0",
+    "start-server-and-test": "^2.0.0"
   },
   "prettier": {
     "semi": false,
