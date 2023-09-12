@@ -1,6 +1,7 @@
 'use client'
 import { Box, Stack, VStack } from 'native-piece'
 import Card from '@/components/Cards/Card'
+import LayoutHeader from '@/layouts/Header'
 import { ModalPokemonPreview, Pagination } from '@/components'
 import { PokemonProvider, usePokemon } from '@/context/PokemonContext'
 
@@ -17,6 +18,7 @@ const Container = () => {
   const showPokemons = pokemons?.length > 0
   return (
     <>
+      <LayoutHeader />
       <ModalPokemonPreview />
       <VStack
         gap={20}
