@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['i.ibb.co', 'raw.githubusercontent.com']
+    domains: ['i.ibb.co', 'i.pravatar.cc', 'raw.githubusercontent.com']
   },
   webpack(config) {
     config.module.rules.push({
