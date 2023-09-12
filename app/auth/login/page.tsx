@@ -25,12 +25,17 @@ const AuthLogin = () => {
   const handleOnSignin = async() => {
     const validatedMail = utils.validatedEmail(values.email)
 
-    const exitingUser = loginMocks.find(item => item.email === values.email)
+    // eslint-disable-next-line array-callback-return
+    const exitingUser = loginMocks.find(item => {
+      if (item.email === values.email && item.password === values.password) return values
+    })
     if (exitingUser) {
       setHasErrorMail(false)
       setterUser(exitingUser)
       router.push(ROUTER.MAIN)
-      return toast.success(`Bienvenido a ${APP_NAME}`)
+      return toast.success(
+        `Bienvenido ${exitingUser.username} a ${APP_NAME}`,
+        { position: 'bottom-right' })
     }
 
     toast.error('Credenciales invalidas, por favor inténtelo de nuevo.')
@@ -61,7 +66,7 @@ const AuthLogin = () => {
         />
       </VStack>
       <Stack marginTop={12} alignItems='center' justifyContent='space-between'>
-        <LinkTo href={ROUTER.FORGOT} text='¿Olvidaste tu contraseña?' />
+        <LinkTo href={ROUTER.LOGIN} text='¿Olvidaste tu contraseña?' />
         <Button
           className='tst-btn tst-btn-auth'
           maxWidth='50%'
