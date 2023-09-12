@@ -15,6 +15,7 @@ import LayoutHeader from '@/layouts/Header'
 
 // PROVIDERS
 import { AuthProvider } from '@/context'
+import LayoutFooter from '@/layouts/Footer'
 
 const inter = Jost({
   subsets: ['latin'],
@@ -33,6 +34,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
           {children}
         </AuthProvider>
         <ToastContainer {...CONFIG_TOAST} />
+        <LayoutFooter />
       </body>
     </html>
   )
