@@ -1,17 +1,25 @@
 'use client'
 import { Box, Stack, VStack } from 'native-piece'
 import Card from '@/components/Cards/Card'
-import { Loading, Pagination } from '@/components'
-import { usePokemon } from '@/context/PokemonContext'
+import { ModalPokemonPreview, Pagination } from '@/components'
+import { PokemonProvider, usePokemon } from '@/context/PokemonContext'
 
 export default function Home() {
-  const { loading, pokemon } = usePokemon()
+  return (
+    <PokemonProvider>
+      <Container />
+    </PokemonProvider>
+  )
+}
+
+const Container = () => {
+  const { pokemons } = usePokemon()
   return (
     <>
-      <Loading DOMLoad={loading} />
+      <ModalPokemonPreview />
       <VStack gap={20} className='tst-background-home'>
         <Stack gap={20} flexWrap='wrap'>
-          {pokemon?.length > 0 && pokemon.map(item => (
+          {pokemons?.length > 0 && pokemons.map(item => (
             <Card key={item.id} item={item} />
           ))}
         </Stack>
