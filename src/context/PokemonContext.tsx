@@ -9,41 +9,49 @@ import React, {
   PropsWithChildren
 } from 'react'
 
+import utils from '@/utils'
+import { useAuthContext } from '.'
 import { AMOUNTPOKEMON, LOCK } from '@/constants'
 import { PokemonData, PokemonPaginationType } from '@/types'
 import { getPokemon, getPokemonPagination } from '@/services/pokemon.service'
-import utils from '@/utils'
 
 type State = {
   pages: number
   total: number
   loading: boolean
-  pokemon: PokemonData[]
+  pokemons: PokemonData[]
+  selectPokemon: PokemonData
 }
 
 type Actions = {
   onPages: (pages: number) => void
+  onSelectPokemon: (pages: PokemonData | undefined) => void
 }
 
 type ContextType = State & Actions
-const PokemonContext = createContext<ContextType>({} as ContextType)
+export const PokemonContext = createContext<ContextType>({} as ContextType)
 
 export const PokemonProvider: FC<PropsWithChildren> = (props) => {
   const [total, setTotal] = useState<number>(0)
   const [pages, setPages] = useState<number>(0)
-  const [loading, setLoading] = useState<boolean>(false)
-  const [pokemon, setPokemon] = useState<PokemonData[]>([])
+  const [pokemons, setPokemons] = useState<PokemonData[]>([])
+  const [selectPokemon, setSelectPokemon] = useState<PokemonData>(pokemons[0])
+
+  const { loading, setterLoading } = useAuthContext()
+
+  const onSelectPokemon = (pokemons?: PokemonData) =>
+    setSelectPokemon(pokemons as PokemonData)
 
   const showPokemon = async() => {
     try {
-      setLoading(true)
+      setterLoading(true)
       utils.scrollTo()
       const data = await getPokemonPagination(AMOUNTPOKEMON, AMOUNTPOKEMON * pages) as PokemonPaginationType
       const promise = data?.results.map(async poke => await getPokemon(poke.url))
       const results = await Promise.all(promise)
-      setPokemon(results)
+      setPokemons(results)
       setTotal(Math.ceil(data?.count / AMOUNTPOKEMON))
-      setLoading(false)
+      setterLoading(false)
     } catch (error) { console.error(error) }
   }
 
@@ -54,8 +62,16 @@ export const PokemonProvider: FC<PropsWithChildren> = (props) => {
   }, [pages])
 
   const values = useMemo(() => {
-    return { total, pages, loading, pokemon, onPages: setPages }
-  }, [loading, pages, pokemon, total])
+    return {
+      total,
+      pages,
+      pokemons,
+      loading,
+      onSelectPokemon,
+      onPages: setPages,
+      selectPokemon: selectPokemon as PokemonData
+    }
+  }, [total, pages, pokemons, loading, selectPokemon])
 
   return <PokemonContext.Provider value={values} {...props} />
 }
