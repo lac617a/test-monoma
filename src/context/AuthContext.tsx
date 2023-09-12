@@ -16,10 +16,12 @@ import { Loading } from '@/components/Loading'
 
 type State = {
   user: UserData
+  loading: boolean
 }
 
 type Actions = {
   setterUser: (user: UserData) => void
+  setterLoading: (status: boolean) => void
 }
 
 type ActionType = State & Actions
@@ -36,6 +38,7 @@ export const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
   const router = useRouter()
   const pathname = usePathname()
 
+  const setterLoading = (status: boolean) => setLoading(status)
   const setterUser = (users: UserData) => {
     sessionStorage.setItem(LOCK, users.token)
     setUser(users)
@@ -58,10 +61,11 @@ export const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
       router.replace(ROUTER.LOGIN)
     }
     return () => setLoading(true)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname])
 
   return (
-    <AuthContext.Provider value={{ user, setterUser }}>
+    <AuthContext.Provider value={{ user, loading, setterUser, setterLoading }}>
       <Loading DOMLoad={loading} />
       {children}
     </AuthContext.Provider>
