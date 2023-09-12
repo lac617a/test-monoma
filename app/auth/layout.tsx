@@ -46,7 +46,7 @@ export default function AuthLayout({ children }: React.PropsWithChildren) {
         <Box className='tst-round' width='100%'>
           <VStack gap={18}>
             <Heading fontSize={40} color='var(--color-white)'>
-              Iniciar sesion
+              Iniciar sesión
             </Heading>
             <Network />
             {children}
