@@ -14,18 +14,25 @@ export default function Home() {
 
 const Container = () => {
   const { pokemons } = usePokemon()
+  const showPokemons = pokemons?.length > 0
   return (
     <>
       <ModalPokemonPreview />
-      <VStack gap={20} className='tst-background-home'>
+      <VStack
+        gap={20}
+        className='tst-background-home'
+        height={!showPokemons ? 'calc(100vh - 90px)' : '100%'}
+      >
         <Stack gap={20} flexWrap='wrap'>
-          {pokemons?.length > 0 && pokemons.map(item => (
+          {showPokemons && pokemons.map(item => (
             <Card key={item.id} item={item} />
           ))}
         </Stack>
-        <Box alignSelf='flex-end'>
-          <Pagination />
-        </Box>
+        {showPokemons && (
+          <Box alignSelf='flex-end'>
+            <Pagination />
+          </Box>
+        )}
       </VStack>
     </>
   )
