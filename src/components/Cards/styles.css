@@ -1,0 +1,25 @@
+.tst-pokemon-back {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.tst-pokemon-back::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(2px);
+  background-color: rgba(250, 250, 250, 0.7);
+}
+
+.tst-type-pokemon {
+  padding: 30px;
+  width: 60px;
+  position: relative;
+  background-image: url("../../assets/type-pokemon.webp");
+  background-size: 400px auto;
+  background-position: -20px -20px;
+  background-repeat: no-repeat;
+}

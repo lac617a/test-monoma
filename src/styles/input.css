@@ -1,0 +1,43 @@
+.tst-input-label {
+  color: var(--color-white);
+  font-weight: 600;
+  line-height: 1.8;
+}
+.tst-input-wrap {
+  padding-block: 5px;
+  border-radius: 12px;
+  padding-inline: 10px;
+  background-color: var(--color-white);
+  box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, .3);
+}
+.tst-input {
+  border: none;
+  outline: none;
+  width: 100%;
+  color: #4a4a4e;
+}
+
+.tst-input::placeholder {
+  opacity: 0.5;
+}
+
+.tst-input.tst-input-chars::placeholder {
+  font-size: 30px;
+}
+
+.tst-input.tst-has-success:disabled {
+  border: 1px solid var(--color-success);
+  background-color: var(--color-success);
+  color: #FFF;
+}
+
+.tst-input.tst-has-danger:disabled {
+  border: 1px solid var(--color-danger);
+  background-color: var(--color-danger);
+  color: #FFF;
+}
+
+.tst-input-auth {
+  font-size: 18px;
+  padding: 18px;
+}

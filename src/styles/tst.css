@@ -1,0 +1,59 @@
+@import './buttons.css';
+@import './input.css';
+
+.tst-header {
+  width: max-content;
+  z-index: 10;
+  padding: 20px;
+  top: 20px;
+  left: 20px;
+
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.tst-heading {
+  font-size: 70px;
+  font-weight: 800;
+  line-height: 70px;
+  text-align: center;
+}
+
+.tst-backdrop {
+  height: 400px;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, .8);
+}
+
+.tst-round {
+  position: relative;
+  padding: 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(30px);
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.tst-has-success {
+  color: var(--color-success);
+}
+
+.tst-has-danger {
+  color: var(--color-danger);
+}
+.tst-background-home {
+  padding: 40px;
+  position: relative;
+  background-image: url("../assets/pokeball.svg");
+  background-size: 500px auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.tst-background-auth {
+  position: relative;
+  background-image: url("../assets/pikachu.webp");
+  background-size: 600px auto;
+  background-position: 80% 270px;
+  background-repeat: no-repeat;
+}

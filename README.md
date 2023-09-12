@@ -1,8 +1,6 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Creado con [Nextjs13][] y [Typescript][]
 
-## Getting Started
-
-First, run the development server:
+Para poder empezar:
 
 ```bash
 npm run dev
@@ -12,23 +10,37 @@ yarn dev
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abrir [link-local][] con tu navegador para mirar todo el resultado "Gracias".
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Estoy usando [Native-piece][] para una mejor experiencia de desarrollo,
+ya que soy el creador de esta librería que esta basada en [Styled-components][]
+y [Emotion][], de igualmanera tengo conocimientos solidos en `styled-components`,
+`emotion/styled`, `saas`, `tailwind`, `MUI`, entres otros framework de estilos y
+procesadores de estilos
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+**Estuve jugando con varias paletas de colores para brindar asi una
+mejor experiancia de usuario**
 
-## Learn More
+## Los colores que se usaron fueron estos
 
-To learn more about Next.js, take a look at the following resources:
+* first-color: `#42b883`
+* second-color: `#347474`
+* third-color: `#35495e`
+* fourth-color: `#ff7e67`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Las librerias de terceros que se implementaros fueron
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+* [react-toastify][]
+* [react-icons][]
+* [native-piece][]
 
-## Deploy on Vercel
+#### Gracias por su tiempo att: Dominyel Rivera
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[emotion]: https://emotion.sh
+[nextjs13]: https://nextjs.org/
+[link-local]: http://localhost:3000
+[native-piece]: https://native-piece
+[typescript]: https://www.typescriptlang.org/
+[styled-components]: https://styled-components.com/
+[react-icons]: https://react-icons.github.io/react-icons
+[react-toastify]: https://fkhadra.github.io/react-toastify/introduction

@@ -1,0 +1,20 @@
+[
+  {
+    "username": "Test-12",
+    "email": "me@gmail.com",
+    "password": "1234567er",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2Vybm1hZSI6IlRlc3QtMTIiLCJlbWFpbCI6Im1lQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNDU2N2VyIn0.nJ5o-fQ48y5vuPmxiNQ0cpSVJGBUyn6g15RHn45-_qA"
+  },
+  {
+    "username": "Yoydev",
+    "email": "yoydev@gmail.com",
+    "password": "123456789",
+    "token": "eeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2Vybm1hZSI6IllveWRldiIsImVtYWlsIjoieW95ZGV2QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNDU2Nzg5In0.5MJq34qRLfQ6H0L08T9Sth_flpdRg5mZzslvtuqDpsI"
+  },
+  {
+    "username": "Monoma",
+    "email": "monoma@gmail.com",
+    "password": "12345678",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2Vybm1hZSI6Ik1vbm9tYSIsImVtYWlsIjoibW9ub21hQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNDU2NzgifQ.CtOOBa8mobT7KgKng4HTvy4qcGcStFYiwg0eTdEO3bc"
+  }
+]
