@@ -14,9 +14,12 @@ import CONFIG_TOAST from '@/config/toast'
 import LayoutHeader from '@/layouts/Header'
 
 // PROVIDERS
-import { AuthProvider, PokemonProvider } from '@/context'
+import { AuthProvider } from '@/context'
 
-const inter = Jost({ subsets: ['latin'] })
+const inter = Jost({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800']
+})
 
 export const metadata: Metadata = METADATA
 
@@ -27,9 +30,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
       <body className={inter.className}>
         <AuthProvider>
           {!pathname.includes('auth') && <LayoutHeader />}
-          <PokemonProvider>
-            {children}
-          </PokemonProvider>
+          {children}
         </AuthProvider>
         <ToastContainer {...CONFIG_TOAST} />
       </body>
