@@ -23,3 +23,24 @@
   background-position: -20px -20px;
   background-repeat: no-repeat;
 }
+
+.tst-card-figcation {
+  z-index: 2;
+  width: 100%;
+  padding-inline: 12px;
+  padding-bottom: 12px;
+  position: relative;
+  justify-content: space-between;
+}
+
+.tst-card-figcation::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 120px;
+  z-index: -1;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(66, 184, 131, 0.5) 100%);
+}
