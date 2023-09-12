@@ -33,6 +33,7 @@ export default function AuthLayout({ children }: React.PropsWithChildren) {
         alignItems='center'
         marginInline='auto'
         justifyContent='center'
+        mediaMd={{ padding: 20 }}
       >
         <Button
           display='flex'
