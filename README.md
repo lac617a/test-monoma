@@ -53,8 +53,8 @@ Las variables de entornos son las siguientes
 [vitest]: https://vitest.dev/
 [emotion]: https://emotion.sh
 [nextjs13]: https://nextjs.org/
-[link-local]: http://localhost:3000
-[native-piece]: https://native-piece
+[link-local]: http://localhost:3000/
+[native-piece]: https://native-piece.com/
 [typescript]: https://www.typescriptlang.org/
 [styled-components]: https://styled-components.com/
 [react-icons]: https://react-icons.github.io/react-icons
